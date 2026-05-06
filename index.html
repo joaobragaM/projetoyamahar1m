@@ -86,7 +86,7 @@
 
         <div class="viewer-col">
             <div id="viewer">
-                <img id="moto-img" src="./imager1m360/bike_0.JPG" alt="Moto 360" draggable="false" />
+                <img id="moto-img" src="imager1m360/bike_0.JPG" alt="Moto 360" draggable="false" />
             </div>
             <span class="drag-label">← Arraste para mover →</span>
         </div>
@@ -119,7 +119,9 @@
 
             <div class="video-wrapper">
                 <video controls poster="image/11-2026-YZFR1MT-SMX-US-12-YY-03812.JPG.webp">
-                    <source src="video/YTDown_YouTube_The-Pinnacle-of-Sportbike-Performance-th_Media_0QHjYdECFcI_001_1080p.mp4" type="video/mp4">
+                    <source
+                        src="video/YTDown_YouTube_The-Pinnacle-of-Sportbike-Performance-th_Media_0QHjYdECFcI_001_1080p.mp4"
+                        type="video/mp4">
                     Seu navegador não suporta o elemento de vídeo.
                 </video>
             </div>
@@ -259,14 +261,15 @@
 
     const img = document.getElementById('moto-img');
     const viewer = document.getElementById('viewer');
+    const hint = document.querySelector('.drag-label'); 
 
     const frames = [];
     for (let i = 0; i < TOTAL; i++) {
         const image = new Image();
-        image.src = `../imager1m360/bike_${i}.jpg`;
+        image.src = `./imager1m360/bike_${i}.jpg`; 
         frames.push(image);
     }
-
+    
     function setFrame(n) {
         current = ((n % TOTAL) + TOTAL) % TOTAL;
         img.src = frames[current].src;
@@ -299,7 +302,7 @@
     viewer.addEventListener('touchstart', (e) => {
         startX = e.touches[0].clientX;
         accumulated = 0;
-        hint.style.opacity = '0';
+        hint.style.opacity = '0'; 
     }, { passive: true });
 
     viewer.addEventListener('touchmove', (e) => {
