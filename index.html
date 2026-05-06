@@ -12,8 +12,7 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
-<!--oi-->
-<!--ola-->
+
 <body>
 
     <header class="hero">
@@ -87,7 +86,7 @@
 
         <div class="viewer-col">
             <div id="viewer">
-                <img id="moto-img" src="/imager1m360/bike_0.jpg" alt="Moto 360" draggable="false" />
+                <img id="moto-img" src="imager1m360/bike_0.JPG" alt="Moto 360" draggable="false" />
             </div>
             <span class="drag-label">← Arraste para mover →</span>
         </div>
@@ -264,7 +263,7 @@
     const frames = [];
     for (let i = 0; i < TOTAL; i++) {
         const image = new Image();
-        image.src = `/imager1m360/bike_${i}.jpg`;
+        image.src = `./imager1m360/bike_${i}.jpg`;
         frames.push(image);
     }
 
