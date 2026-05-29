@@ -17,7 +17,7 @@ const frames = [];
 
 for (let i = 0; i < TOTAL; i++) {
     const image = new Image();
-    image.src = `./imager1m360/bike_${i}.jpg`;
+    image.src = `imager1m360/bike_${i}.jpg`;
     frames.push(image);
 }
 
